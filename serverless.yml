@@ -1,0 +1,14 @@
+service: planning-bot
+
+package:
+  artifact: artifact.zip
+
+provider:
+  name: aws
+  region: eu-west-1
+  runtime: go1.x
+  memorySize: 128
+
+functions:
+  hello:
+    handler: bin/hello
