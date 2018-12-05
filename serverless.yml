@@ -1,7 +1,5 @@
 service: planning-bot
 
-package:
-  artifact: artifact.zip
 
 provider:
   name: aws
