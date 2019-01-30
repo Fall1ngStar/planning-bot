@@ -16,4 +16,4 @@ functions:
   tweet:
     handler: bin/tweet
     events:
-      - schedule: rate(1 minute)
+      - schedule: cron(45 7,9,12,15 ? * 2-6 *)
