@@ -6,7 +6,14 @@ provider:
   region: eu-west-1
   runtime: go1.x
   memorySize: 128
+  environment:
+    BOT_KEY: ${env:BOT_KEY}
+    BOT_KEY_SECRET: ${env:BOT_KEY_SECRET}
+    BOT_TOKEN: ${env:BOT_TOKEN}
+    BOT_TOKEN_SECRET: ${env:BOT_TOKEN_SECRET}
 
 functions:
-  hello:
-    handler: bin/hello
+  tweet:
+    handler: bin/tweet
+    events:
+      - schedule: rate(1 minute)

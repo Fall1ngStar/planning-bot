@@ -1,8 +1,11 @@
 .PHONY: build clean deploy
+BOT_KEY: ${BOT_KEY}
+BOT_KEY_SECRET: ${BOT_KEY_SECRET}
+BOT_TOKEN: ${BOT_TOKEN}
+BOT_TOKEN_SECRET: ${BOT_TOKEN_SECRET}
 
 build:
-	env GOOS=linux go build -ldflags="-s -w" -o bin/hello hello/main.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/world world/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/tweet tweet/tweet.go
 
 clean:
 	rm -rf ./bin ./vendor Gopkg.lock
